@@ -1,0 +1,22 @@
+.navCont {
+  background-color: #fffeff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em;
+}
+
+.logo {
+  color: #8b5cf6;
+  font-family: 'Zain', sans-serif;
+  font-size: 1.5em;
+  font-weight: 800;
+  user-select: none;
+}
+
+.button {
+  color: #617589;
+  font-family: 'Funnel Sans', sans-serif;
+  font-size: 1.1em;
+  cursor: pointer;
+}

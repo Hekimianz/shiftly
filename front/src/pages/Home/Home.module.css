@@ -1,0 +1,166 @@
+.homeCont {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.heroCont {
+  background-image: linear-gradient(
+      180deg,
+      rgba(139, 92, 246, 0.2) 0%,
+      rgba(76, 29, 149, 0.7) 100%
+    ),
+    url('../../assets/herobg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 4em;
+}
+
+.heroCont h1 {
+  font-family: 'Zain', sans-serif;
+  color: #fff;
+  font-weight: 800;
+  font-size: 2em;
+  text-align: center;
+}
+
+.heroCont .highlight {
+  color: #facc14;
+}
+
+.heroCont p {
+  color: #fff;
+  font-family: 'Funnel Sans', sans-serif;
+  margin-top: 1em;
+  line-height: 22.5px;
+}
+
+.mainBtn,
+.secBtn {
+  margin-top: 1em;
+  border-radius: 8px;
+  border: none;
+  padding: 0.2em 0;
+  font-family: 'Zain', sans-serif;
+  font-weight: 800;
+  font-size: 1em;
+  color: #8b5cf6;
+  cursor: pointer;
+}
+
+.mainBtn {
+  background-color: #8b5cf6;
+  color: #fff;
+}
+
+.whySection,
+.howSection,
+.whoSection,
+.getStartedSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2em;
+}
+
+.whySection h2,
+.howSection h2,
+.whoSection h2,
+.getStartedSection h2 {
+  font-weight: 800;
+  font-size: 2em;
+  font-family: 'Zain', sans-serif;
+}
+
+.howSection h2 {
+  margin-bottom: 1em;
+}
+
+.whySection,
+.howSection {
+  background-color: #fff9fa;
+}
+
+.whySection p {
+  font-family: 'Funnel Sans', sans-serif;
+  margin-top: 0.5em;
+  color: #798899;
+}
+
+.howPoint {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+  padding: 0 2em;
+}
+
+.howPoint span {
+  color: #fff;
+  height: 1em;
+  width: 2em;
+  padding: 5px 0;
+  text-align: center;
+  border-radius: 20px;
+  margin-right: 0.5em;
+}
+
+.howPink {
+  background-color: #f472b6;
+}
+
+.howPurple {
+  background-color: #8b5cf6;
+}
+
+.howPoint div h3 {
+  font-weight: 700;
+  font-family: 'Zain', sans-serif;
+  font-size: 1.3em;
+}
+
+.howPoint div p {
+  text-align: center;
+  margin-top: 0.5em;
+  background-color: #fff;
+  padding: 1em 1em;
+  border-radius: 10px;
+  font-family: 'Funnel Sans', sans-serif;
+  width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.whoSection {
+  background-color: #fff;
+  padding: 2em 0;
+}
+
+.getStartedSection {
+  background-color: #fff9fa;
+  padding: 4em 2em;
+}
+
+.getStartedSection p {
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+  font-family: 'Funnel Sans', sans-serif;
+  color: #79899a;
+}
+
+.getStartedSection button {
+  background-color: #8b5cf6;
+  color: #fff;
+  font-family: 'Zain', sans-serif;
+  border: none;
+  width: 100%;
+  padding: 0.5em 0;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 1em;
+  cursor: pointer;
+}

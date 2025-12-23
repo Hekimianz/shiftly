@@ -1,0 +1,49 @@
+.whoCont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 10px;
+  font-weight: 800;
+  font-family: 'Zain', sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.blue {
+  color: #1f40af;
+}
+
+.blueBg {
+  background-color: #f0f6ff;
+  color: #1f40af;
+}
+
+.yellow {
+  color: #9b3412;
+}
+
+.yellowBg {
+  background-color: #fff8ed;
+  color: #9b3412;
+}
+
+.red {
+  color: #7b3433;
+}
+
+.redBg {
+  color: #7b3433;
+  background-color: #fef2f2;
+}
+
+.green {
+  color: #0f5e59;
+}
+
+.greenBg {
+  background-color: #f0fdfa;
+  color: #0f5e59;
+}

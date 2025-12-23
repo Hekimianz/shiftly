@@ -1,0 +1,51 @@
+.featureCont {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  text-align: center;
+  background-color: #fff;
+  width: 80%;
+  border-radius: 8px;
+  margin-bottom: 2em;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.featureCont span {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featureCont h3 {
+  font-family: 'Zain', sans-serif;
+  font-size: 1em;
+  margin-top: 1em;
+  font-weight: 700;
+}
+
+.featureCont p {
+  margin-top: 1em;
+}
+
+.purple {
+  color: #8b5cf6;
+  background-color: #f3e8ff;
+  border: 1px solid #8a5cf67a;
+}
+
+.pink {
+  color: #f580bd;
+  background-color: #fce7f4;
+  border: 1px solid #f580bd7a;
+}
+
+.green {
+  color: #2cd4bf;
+  background-color: #ccfbf1;
+  border: 1px solid #2cd4bf7a;
+}
