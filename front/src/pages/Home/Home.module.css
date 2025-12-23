@@ -14,11 +14,10 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 4em;
+  padding: 2em 4em;
 }
 
 .heroCont h1 {
@@ -65,7 +64,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 2em;
+  width: 100%;
 }
 
 .whySection h2,
@@ -75,6 +74,7 @@
   font-weight: 800;
   font-size: 2em;
   font-family: 'Zain', sans-serif;
+  text-align: center;
 }
 
 .howSection h2 {
@@ -84,12 +84,14 @@
 .whySection,
 .howSection {
   background-color: #fff9fa;
+  padding: 2em 2em;
 }
 
 .whySection p {
   font-family: 'Funnel Sans', sans-serif;
   margin-top: 0.5em;
   color: #798899;
+  text-align: center;
 }
 
 .howPoint {
