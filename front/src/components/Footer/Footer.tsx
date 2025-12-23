@@ -8,7 +8,7 @@ export default function Footer() {
         <span>Terms</span>
         <span>Contact</span>
       </div>
-      <span>© Shiftly. All rights reserved.</span>
+      <span>Made with ♥️ by Aram Hekimian</span>
     </footer>
   );
 }
