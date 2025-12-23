@@ -95,6 +95,7 @@
 .howPoint {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   margin-bottom: 2em;
   padding: 0 2em;
 }
@@ -103,10 +104,13 @@
   color: #fff;
   height: 1em;
   width: 2em;
-  padding: 5px 0;
+  padding: 20px 0;
   text-align: center;
   border-radius: 20px;
   margin-right: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .howPink {
