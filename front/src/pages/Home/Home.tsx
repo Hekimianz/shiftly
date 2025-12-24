@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import Feature from './Feature';
 import styles from './Home.module.css';
 import Who from './Who';
@@ -14,7 +15,11 @@ export default function Home() {
           easily with friends, family or coworkers - no messy screenshots, no
           confusion.
         </p>
-        <button className={styles.mainBtn}>Get started</button>
+
+        <Link to="login" className={styles.mainBtn}>
+          Get started
+        </Link>
+
         <button className={styles.secBtn}>See example</button>
       </section>
 
@@ -74,7 +79,9 @@ export default function Home() {
       <section className={styles.getStartedSection}>
         <h2>Ready to simplify your schedule?</h2>
         <p>Create your first week in minutes.</p>
-        <button>Get started</button>
+        <Link to="login" className={styles.ctaBtn}>
+          Get started
+        </Link>
       </section>
     </div>
   );

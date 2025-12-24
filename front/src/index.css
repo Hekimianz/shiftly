@@ -6,11 +6,17 @@ html {
   overflow-x: hidden;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 body,
 #root {
   min-height: 100%;
   width: 100%;
   overflow-x: hidden;
+  flex: 1;
 }
 
 /* ------------------------------

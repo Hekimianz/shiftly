@@ -13,7 +13,6 @@
   user-select: none;
   text-align: center;
   padding-top: 2em;
-  padding-bottom: 1em;
 }
 
 .links {
@@ -22,10 +21,11 @@
   display: flex;
   gap: 10px;
   cursor: pointer;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 .footer span {
   color: #617589;
   padding-bottom: 0.5em;
+  font-family: 'Funnel Sans', sans-serif;
 }
