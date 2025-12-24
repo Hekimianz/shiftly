@@ -57,7 +57,7 @@ export default function Home() {
             send
           </span>
           <div>
-            <h3>Create your week</h3>
+            <h3>Share your week</h3>
             <p>Send a link to anyone who needs to know your schedule.</p>
           </div>
         </div>
