@@ -1,0 +1,93 @@
+.loginCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  background-color: #f6f7f8;
+  padding: 4em 0 8em 0;
+}
+
+.mainIcon {
+  background-color: #f3eeff;
+  color: #8b5cf6;
+  padding: 0.5em;
+  font-size: 2.5em;
+  border-radius: 8px;
+}
+
+.loginCont h1 {
+  font-size: 2em;
+  margin-top: 0.2em;
+  font-family: 'Zain', sans-serif;
+}
+
+.loginCont p {
+  margin-top: -0.3em;
+  font-family: 'Funnel Sans', sans-serif;
+  color: #79899a;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 1em;
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 1.5em;
+}
+
+.form label {
+  font-family: 'Zain', sans-serif;
+}
+
+.form input {
+  background-color: #fff;
+  border: 1px solid #ebf0f4;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border-radius: 6px;
+  font-family: 'Funnel Sans', sans-serif;
+  padding: 0.5em;
+  padding-left: 6px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.form button {
+  color: #fff;
+  background-color: #8b5cf6;
+  border: none;
+  border-radius: 8px;
+  padding: 1em 0;
+  font-weight: 800;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+
+.form button:disabled {
+  background-color: #8a5cf667;
+}
+
+.error {
+  color: #e63946;
+  text-align: center;
+  font-family: 'Funnel Sans', sans-serif;
+  font-weight: 100;
+}
+
+.registerLink {
+  color: #a27ef8;
+  font-weight: 600;
+  transition: 0.2s all;
+}
+
+.registerLink:hover {
+  color: #8b5cf6;
+}
+
+.register {
+  margin-top: 2em;
+}

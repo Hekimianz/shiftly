@@ -13,7 +13,7 @@ export default function Login() {
   return (
     <section className={styles.loginCont}>
       <span className={`material-symbols-outlined ${styles.mainIcon}`}>
-        calendar_month
+        waving_hand
       </span>
       <h1>Welcome back!</h1>
       <p>Let's get you scheduled</p>
@@ -61,7 +61,7 @@ export default function Login() {
       </Formik>
       <p className={styles.register}>
         Don't have an account?{' '}
-        <Link className={styles.registerLink} to="/">
+        <Link className={styles.registerLink} to="/register">
           Create one here!
         </Link>
       </p>

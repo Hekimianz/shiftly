@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/Navbar.tsx';
 import Home from './pages/Home/Home.tsx';
 import Footer from './components/Footer/Footer.tsx';
 import Login from './pages/Login/Login.tsx';
+import Register from './pages/Register/Register.tsx';
 
 const root = document.getElementById('root')!;
 
@@ -16,6 +17,7 @@ ReactDom.createRoot(root).render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
       <Footer />
     </BrowserRouter>
