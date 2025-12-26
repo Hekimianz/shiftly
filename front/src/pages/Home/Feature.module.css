@@ -7,6 +7,7 @@
   text-align: center;
   background-color: #fff;
   width: 80%;
+  max-width: 500px;
   border-radius: 8px;
   margin-bottom: 2em;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -48,4 +49,10 @@
   color: #2cd4bf;
   background-color: #ccfbf1;
   border: 1px solid #2cd4bf7a;
+}
+
+.yellow {
+  color: #e9c46a;
+  background-color: rgb(255, 255, 200);
+  border: 1px solid #e9c46a;
 }

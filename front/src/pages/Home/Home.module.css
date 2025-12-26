@@ -62,7 +62,8 @@
 .whySection,
 .howSection,
 .whoSection,
-.getStartedSection {
+.getStartedSection,
+.featuresCont {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -173,4 +174,81 @@
   cursor: pointer;
   text-align: center;
   text-decoration: none;
+}
+
+@media screen and (min-width: 738px) {
+  .featuresCont {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    align-items: stretch;
+    justify-items: center;
+  }
+
+  .heroCont h1 {
+    width: 80%;
+    align-self: center;
+  }
+
+  .howPointsCont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .howPoint {
+    margin: 0;
+    padding: 0;
+  }
+
+  .howPoint span {
+    width: 2em;
+    padding: 1em;
+    font-size: 1em;
+  }
+
+  .whoPoints {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .heroCont {
+    height: 400px;
+  }
+
+  .mainBtn,
+  .secBtn,
+  .ctaBtn {
+    width: 400px;
+    align-self: center;
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .heroCont p {
+    margin-bottom: 2em;
+    text-align: center;
+    font-size: 1.3em;
+  }
+
+  .heroCont h1 {
+    font-size: 2.8em;
+  }
+
+  .whySection {
+    padding: 2em 16em;
+    align-self: center;
+  }
+
+  .howPointsCont {
+    gap: 100px;
+  }
+
+  .whoPoints {
+    gap: 50px;
+  }
 }

@@ -2,6 +2,7 @@ import { Link } from 'react-router';
 import Feature from './Feature';
 import styles from './Home.module.css';
 import Who from './Who';
+
 export default function Home() {
   return (
     <div className={styles.homeCont}>
@@ -24,56 +25,72 @@ export default function Home() {
       </section>
 
       <section className={styles.whySection}>
-        <h2>Why Shiftly?</h2>
-        <p>Simplify your work life with tools designed for flexibility.</p>
-        <Feature
-          icon="calendar_view_week"
-          title="Simple weekly schedules"
-          color="purple"
-        >
-          Create your schedule week by week and add daily shifts in a clean,
-          easy-to-read format.
-        </Feature>
-        <Feature icon="ios_share" title="Easy sharing" color="pink">
-          Generate a link and share your week instantly. Anyone with the link
-          can view it, no account needed.
-        </Feature>
-        <Feature icon="sync" title="Always up to date" color="green">
-          Update your shifts anytime. Shared schedules always reflect the latest
-          changes.
-        </Feature>
+        <>
+          <h2>Why Shiftly?</h2>
+          <p>Simplify your work life with tools designed for flexibility.</p>
+        </>
+        <div className={styles.featuresCont}>
+          <Feature
+            icon="calendar_view_week"
+            title="Simple weekly schedules"
+            color="purple"
+          >
+            Create your schedule week by week and add daily shifts in a clean,
+            easy-to-read format.
+          </Feature>
+          <Feature icon="ios_share" title="Easy sharing" color="pink">
+            Generate a link and share your week instantly. Anyone with the link
+            can view it, no account needed.
+          </Feature>
+          <Feature icon="sync" title="Always up to date" color="green">
+            Update your shifts anytime. Shared schedules always reflect the
+            latest changes.
+          </Feature>
+          <Feature
+            icon="visibility"
+            title="Clean and distraction-free"
+            color="yellow"
+          >
+            No ads, no clutter. Just your schedule, clearly presented.
+          </Feature>
+        </div>
       </section>
 
       <section className={styles.howSection}>
         <h2>How it works</h2>
-        <div className={styles.howPoint}>
-          <span className={`material-symbols-outlined ${styles.howPurple}`}>
-            add_circle
-          </span>
-          <div>
-            <h3>Create your week</h3>
-            <p>
-              Select a week and add your daily shifts with start and end times.
-            </p>
+        <div className={styles.howPointsCont}>
+          <div className={styles.howPoint}>
+            <span className={`material-symbols-outlined ${styles.howPurple}`}>
+              add_circle
+            </span>
+            <div>
+              <h3>Create your week</h3>
+              <p>
+                Select a week and add your daily shifts with start and end
+                times.
+              </p>
+            </div>
           </div>
-        </div>
-        <div className={styles.howPoint}>
-          <span className={`material-symbols-outlined ${styles.howPink}`}>
-            send
-          </span>
-          <div>
-            <h3>Share your week</h3>
-            <p>Send a link to anyone who needs to know your schedule.</p>
+          <div className={styles.howPoint}>
+            <span className={`material-symbols-outlined ${styles.howPink}`}>
+              send
+            </span>
+            <div>
+              <h3>Share your week</h3>
+              <p>Send a link to anyone who needs to know your schedule.</p>
+            </div>
           </div>
         </div>
       </section>
 
       <section className={styles.whoSection}>
         <h2>Who uses Shiftly?</h2>
-        <Who color="blue" text="Shift workers" icon="schedule" />
-        <Who color="yellow" text="Retail & hospitality" icon="storefront" />
-        <Who color="red" text="Nurses & healthcare" icon="medical_services" />
-        <Who color="green" text="Flexible teams" icon="group" />
+        <div className={styles.whoPoints}>
+          <Who color="blue" text="Shift workers" icon="schedule" />
+          <Who color="yellow" text="Retail & hospitality" icon="storefront" />
+          <Who color="red" text="Nurses & healthcare" icon="medical_services" />
+          <Who color="green" text="Flexible teams" icon="group" />
+        </div>
       </section>
 
       <section className={styles.getStartedSection}>
