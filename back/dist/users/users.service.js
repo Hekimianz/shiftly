@@ -15,7 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UsersService = void 0;
 const common_1 = require("@nestjs/common");
 const users_repository_1 = __importDefault(require("./users.repository"));
-const users_errors_1 = require("./users.errors");
 let UsersService = class UsersService {
     constructor(usersRepository) {
         this.usersRepository = usersRepository;
@@ -23,30 +22,11 @@ let UsersService = class UsersService {
     async getAllUsers() {
         return await this.usersRepository.getAllUsers();
     }
-    async loginUser(dto) {
-        try {
-            return await this.usersRepository.loginUser(dto);
-        }
-        catch (err) {
-            if (err instanceof users_errors_1.InvalidCredentialsError) {
-                throw new common_1.BadRequestException('No user found with given credentials');
-            }
-            throw new common_1.InternalServerErrorException('User authentication failed');
-        }
+    async getByEmailOrNull(email) {
+        return await this.usersRepository.getByEmailOrNull(email);
     }
-    async registerUser(dto) {
-        try {
-            return await this.usersRepository.registerUser(dto);
-        }
-        catch (err) {
-            if (err instanceof users_errors_1.UserAlreadyExistsError) {
-                throw new common_1.ConflictException('Email already exists.');
-            }
-            if (err instanceof users_errors_1.PasswordsDoNotMatchError) {
-                throw new common_1.BadRequestException('Passwords do not match');
-            }
-            throw new common_1.InternalServerErrorException('User registration failed');
-        }
+    async create(data) {
+        return await this.usersRepository.create(data);
     }
 };
 exports.UsersService = UsersService;

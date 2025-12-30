@@ -16,7 +16,6 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("typeorm");
 const user_entity_1 = require("./user.entity");
 const typeorm_2 = require("@nestjs/typeorm");
-const users_errors_1 = require("./users.errors");
 let UsersRepository = class UsersRepository {
     constructor(usersRepository) {
         this.usersRepository = usersRepository;
@@ -24,30 +23,14 @@ let UsersRepository = class UsersRepository {
     async getAllUsers() {
         return await this.usersRepository.find();
     }
-    async loginUser(dto) {
-        const existingUser = await this.usersRepository.findOneBy({
-            email: dto.email,
-        });
-        if (!existingUser)
-            throw new users_errors_1.InvalidCredentialsError();
-        if (dto.password !== existingUser.password)
-            throw new users_errors_1.InvalidCredentialsError();
-        return `Welcome back ${existingUser.firstName} ${existingUser.lastName}`;
+    async getByEmailOrNull(email) {
+        const foundUser = await this.usersRepository.findOneBy({ email });
+        if (!foundUser)
+            return null;
+        return foundUser;
     }
-    async registerUser(dto) {
-        const existingUser = await this.usersRepository.findOneBy({
-            email: dto.email,
-        });
-        if (existingUser)
-            throw new users_errors_1.UserAlreadyExistsError();
-        if (dto.password !== dto.confirmPassword)
-            throw new users_errors_1.PasswordsDoNotMatchError();
-        const newUser = this.usersRepository.create({
-            email: dto.email,
-            firstName: dto.firstName,
-            lastName: dto.lastName,
-            password: dto.password,
-        });
+    async create(data) {
+        const newUser = this.usersRepository.create(data);
         return this.usersRepository.save(newUser);
     }
 };

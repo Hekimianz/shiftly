@@ -16,6 +16,8 @@ const config_types_1 = require("./config/config.types");
 const typeorm_1 = require("@nestjs/typeorm");
 const database_config_1 = require("./config/database.config");
 const users_module_1 = require("./users/users.module");
+const auth_module_1 = require("./auth/auth.module");
+const jwt_1 = require("@nestjs/jwt");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -37,7 +39,15 @@ exports.AppModule = AppModule = __decorate([
                     return { ...dbConfig };
                 },
             }),
+            jwt_1.JwtModule.registerAsync({
+                global: true,
+                inject: [config_1.ConfigService],
+                useFactory: (config) => ({
+                    secret: config.get('JWT_SECRET'),
+                }),
+            }),
             users_module_1.UsersModule,
+            auth_module_1.AuthModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
