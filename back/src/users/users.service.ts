@@ -6,7 +6,7 @@ import { User } from './user.entity';
 export class UsersService {
   constructor(private readonly usersRepository: UsersRepository) {}
 
-  public async getAllUsers(): Promise<User[]> {
+  public async getAllUsers(): Promise<Partial<User>[]> {
     return await this.usersRepository.getAllUsers();
   }
 

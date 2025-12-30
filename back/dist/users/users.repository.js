@@ -21,7 +21,14 @@ let UsersRepository = class UsersRepository {
         this.usersRepository = usersRepository;
     }
     async getAllUsers() {
-        return await this.usersRepository.find();
+        return await this.usersRepository.find({
+            select: {
+                id: true,
+                firstName: true,
+                lastName: true,
+                email: true,
+            },
+        });
     }
     async getByEmailOrNull(email) {
         const foundUser = await this.usersRepository.findOneBy({ email });

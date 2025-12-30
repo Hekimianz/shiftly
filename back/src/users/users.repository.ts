@@ -9,8 +9,15 @@ export default class UsersRepository {
     @InjectRepository(User) private readonly usersRepository: Repository<User>,
   ) {}
 
-  public async getAllUsers(): Promise<User[]> {
-    return await this.usersRepository.find();
+  public async getAllUsers(): Promise<Partial<User>[]> {
+    return await this.usersRepository.find({
+      select: {
+        id: true,
+        firstName: true,
+        lastName: true,
+        email: true,
+      },
+    });
   }
 
   public async getByEmailOrNull(email: string): Promise<User | null> {
