@@ -25,6 +25,12 @@ let UsersService = class UsersService {
     async getByEmailOrNull(email) {
         return await this.usersRepository.getByEmailOrNull(email);
     }
+    async getById(id) {
+        const user = await this.usersRepository.getById(id);
+        if (!user)
+            throw new common_1.NotFoundException('Invalid user id');
+        return user;
+    }
     async create(data) {
         return await this.usersRepository.create(data);
     }

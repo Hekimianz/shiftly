@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { BadRequestException, Controller, Get } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { User } from './user.entity';
 
@@ -11,8 +11,9 @@ export class UsersController {
     return await this.usersService.getAllUsers();
   }
 
-  @Get('email')
+  @Get('/email')
   public async getByEmailOrNull(email: string): Promise<User> {
+    if (!email) throw new BadRequestException(`Cant directly call this route`);
     return await this.usersService.getByEmailOrNull(email);
   }
 }

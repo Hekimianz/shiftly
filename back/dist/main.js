@@ -17,6 +17,10 @@ async function bootstrap() {
         transformOptions: { enableImplicitConversion: true },
     }));
     app.useGlobalInterceptors(new common_1.ClassSerializerInterceptor(app.get(core_1.Reflector)));
+    app.enableCors({
+        origin: ['http://localhost:5173'],
+        credentials: true,
+    });
     await app.listen(PORT);
     console.log(`Server listening on port ${PORT}`);
 }

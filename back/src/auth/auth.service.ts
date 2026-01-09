@@ -49,12 +49,6 @@ export class AuthService {
   public async login(dto: LoginUserDto): Promise<{
     message: string;
     access_token: string;
-    user: {
-      id: string;
-      email: string;
-      firstName: string;
-      lastName: string;
-    };
   }> {
     const { email, password } = dto;
     const user = await this.usersService.getByEmailOrNull(email);
@@ -68,9 +62,6 @@ export class AuthService {
     const payload = {
       sub: user.id,
       email: user.email,
-      firstName: user.firstName,
-      lastName: user.lastName,
-      id: user.id,
     };
 
     const accessToken = await this.jwtService.signAsync(payload);
@@ -78,12 +69,6 @@ export class AuthService {
     return {
       message: 'Login successfull',
       access_token: accessToken,
-      user: {
-        id: user.id,
-        email: user.email,
-        firstName: user.firstName,
-        lastName: user.lastName,
-      },
     };
   }
 }

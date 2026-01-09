@@ -20,6 +20,8 @@ let UsersController = class UsersController {
         return await this.usersService.getAllUsers();
     }
     async getByEmailOrNull(email) {
+        if (!email)
+            throw new common_1.BadRequestException(`Cant directly call this route`);
         return await this.usersService.getByEmailOrNull(email);
     }
 };
@@ -31,7 +33,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UsersController.prototype, "getAllUsers", null);
 __decorate([
-    (0, common_1.Get)('email'),
+    (0, common_1.Get)('/email'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)

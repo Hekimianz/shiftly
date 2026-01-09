@@ -1,7 +1,8 @@
 import styles from './Login.module.css';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+import { useAuth } from '../../context/AuthContext';
 const LoginSchema = Yup.object({
   email: Yup.string()
     .email('Invalid email address')
@@ -10,6 +11,8 @@ const LoginSchema = Yup.object({
 });
 
 export default function Login() {
+  const { login } = useAuth();
+  const navigate = useNavigate();
   return (
     <section className={styles.loginCont}>
       <span className={`material-symbols-outlined ${styles.mainIcon}`}>
@@ -20,11 +23,20 @@ export default function Login() {
       <Formik
         initialValues={{ email: '', password: '' }}
         validationSchema={LoginSchema}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
+        onSubmit={async (values, { setSubmitting, setErrors }) => {
+          try {
+            await login(values);
+
+            navigate('/');
+          } catch (err) {
+            if (err instanceof Error) {
+              setErrors({ email: err.message });
+            } else {
+              setErrors({ email: 'Login failed' });
+            }
+          } finally {
             setSubmitting(false);
-          }, 400);
+          }
         }}
       >
         {({ isSubmitting }) => (

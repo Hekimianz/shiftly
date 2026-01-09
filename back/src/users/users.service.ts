@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import UsersRepository from './users.repository';
 import { User } from './user.entity';
 
@@ -10,8 +10,14 @@ export class UsersService {
     return await this.usersRepository.getAllUsers();
   }
 
-  public async getByEmailOrNull(email: string): Promise<User | null> {
+  public async getByEmailOrNull(email: string): Promise<User> {
     return await this.usersRepository.getByEmailOrNull(email);
+  }
+
+  public async getById(id: string): Promise<User> {
+    const user = await this.usersRepository.getById(id);
+    if (!user) throw new NotFoundException('Invalid user id');
+    return user;
   }
 
   public async create(data: Partial<User>): Promise<User> {

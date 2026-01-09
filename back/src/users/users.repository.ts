@@ -26,6 +26,12 @@ export default class UsersRepository {
     return foundUser;
   }
 
+  public async getById(id: string): Promise<User | null> {
+    const foundUser = await this.usersRepository.findOneBy({ id });
+    if (!foundUser) return null;
+    return foundUser;
+  }
+
   public async create(data: Partial<User>): Promise<User> {
     const newUser = this.usersRepository.create(data);
     return this.usersRepository.save(newUser);

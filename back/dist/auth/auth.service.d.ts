@@ -18,11 +18,5 @@ export declare class AuthService {
     login(dto: LoginUserDto): Promise<{
         message: string;
         access_token: string;
-        user: {
-            id: string;
-            email: string;
-            firstName: string;
-            lastName: string;
-        };
     }>;
 }

@@ -87,20 +87,11 @@ let AuthService = class AuthService {
         const payload = {
             sub: user.id,
             email: user.email,
-            firstName: user.firstName,
-            lastName: user.lastName,
-            id: user.id,
         };
         const accessToken = await this.jwtService.signAsync(payload);
         return {
             message: 'Login successfull',
             access_token: accessToken,
-            user: {
-                id: user.id,
-                email: user.email,
-                firstName: user.firstName,
-                lastName: user.lastName,
-            },
         };
     }
 };

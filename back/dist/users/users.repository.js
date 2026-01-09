@@ -36,6 +36,12 @@ let UsersRepository = class UsersRepository {
             return null;
         return foundUser;
     }
+    async getById(id) {
+        const foundUser = await this.usersRepository.findOneBy({ id });
+        if (!foundUser)
+            return null;
+        return foundUser;
+    }
     async create(data) {
         const newUser = this.usersRepository.create(data);
         return this.usersRepository.save(newUser);

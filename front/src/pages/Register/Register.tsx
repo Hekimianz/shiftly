@@ -1,7 +1,8 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import styles from './Register.module.css';
 import * as Yup from 'yup';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+import { useAuth } from '../../context/AuthContext';
 
 const RegSchema = Yup.object({
   email: Yup.string()
@@ -12,12 +13,14 @@ const RegSchema = Yup.object({
   password: Yup.string()
     .min(8, 'Password must be at least 8 characters long')
     .required('Password is required'),
-  confirmPass: Yup.string()
+  confirmPassword: Yup.string()
     .oneOf([Yup.ref('password')], 'Passwords must match')
     .required('You must confirm the password'),
 });
 
 export default function Register() {
+  const { register } = useAuth();
+  const navigate = useNavigate();
   return (
     <section className={styles.loginCont}>
       <span className={`material-symbols-outlined ${styles.mainIcon}`}>
@@ -31,14 +34,24 @@ export default function Register() {
           lastName: '',
           email: '',
           password: '',
-          confirmPass: '',
+          confirmPassword: '',
         }}
         validationSchema={RegSchema}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
+        onSubmit={async (values, { setSubmitting, setErrors }) => {
+          console.log(values);
+          try {
+            console.log('trying with', values);
+            await register(values);
+            navigate('/');
+          } catch (err) {
+            if (err instanceof Error) {
+              setErrors({ email: err.message });
+            } else {
+              setErrors({ email: 'Something went wrong' });
+            }
+          } finally {
             setSubmitting(false);
-          }, 400);
+          }
         }}
       >
         {({ isSubmitting }) => (
@@ -65,7 +78,7 @@ export default function Register() {
             />
             <ErrorMessage
               className={styles.error}
-              name="confirmPass"
+              name="confirmPassword"
               component="div"
             />
             <label htmlFor="firstName">First Name</label>
@@ -96,12 +109,12 @@ export default function Register() {
               name="password"
               id="password"
             />
-            <label htmlFor="confirmPass">Confirm Password</label>
+            <label htmlFor="confirmPassword">Confirm Password</label>
             <Field
               placeholder="confirm password"
               type="password"
-              name="confirmPass"
-              id="confirmPass"
+              name="confirmPassword"
+              id="confirmPassword"
             />
             <button type="submit" disabled={isSubmitting}>
               Register
