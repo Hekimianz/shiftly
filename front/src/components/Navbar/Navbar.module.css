@@ -24,3 +24,15 @@
 .link {
   text-decoration: none;
 }
+
+.accountIcon {
+  font-size: 2em;
+  font-variation-settings: 'FILL' 1;
+  cursor: pointer;
+  transition: 0.2s all;
+  color: #8b5cf6;
+}
+
+.accountIcon:hover {
+  font-size: 2.2em;
+}
