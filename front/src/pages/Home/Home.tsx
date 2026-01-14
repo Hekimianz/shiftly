@@ -104,11 +104,39 @@ const homeNoUser = (
 
 export default function Home() {
   const { user, loading } = useAuth();
+  const homeUser = (
+    <section className={styles.dashboardCont}>
+      <h2>
+        Welcome back,
+        <br />
+        <span className={styles.bold}>{user?.firstName}</span>!
+      </h2>
+      <p className={styles.subtitle}>Ready to plan out your next schedule?</p>
+      <div className={styles.createWeekCont}>
+        <h2>Create your new week</h2>
+        <p className={styles.lightSubtitle}>
+          Add your shifts, set your goals, and share with your team in minutes.
+        </p>
+        <div className={styles.iconCont}>
+          <span className="material-symbols-outlined">calendar_month</span>
+          <div className={styles.iconContTop}>
+            <span className="material-symbols-outlined">timer</span>
+          </div>
+          <div className={styles.iconContBottom}>
+            <span className="material-symbols-outlined">bolt</span>
+          </div>
+        </div>
+        <Link to={'/create'} className={styles.weekCtaBtn}>
+          Get Started
+        </Link>
+      </div>
+    </section>
+  );
   return (
     <div className={styles.homeCont}>
       {loading && <div className={styles.loader}></div>}
       {!user && !loading && homeNoUser}
-      {user && <div>{`hello ${user.firstName}!`}</div>}
+      {user && homeUser}
     </div>
   );
 }

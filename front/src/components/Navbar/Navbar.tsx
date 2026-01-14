@@ -16,11 +16,14 @@ export default function Navbar() {
         </Link>
       )}
       {user && (
-        <Link className={styles.link} to="profile">
-          <span className={`material-symbols-outlined ${styles.accountIcon}`}>
-            account_circle
-          </span>
-        </Link>
+        <div className={styles.link}>
+          <Link className={styles.link} to="profile">
+            <span className={`material-symbols-outlined ${styles.accountIcon}`}>
+              account_circle
+            </span>
+            <span>{`${user.firstName} ${user.lastName[0]}.`}</span>
+          </Link>
+        </div>
       )}
     </div>
   );

@@ -23,14 +23,20 @@
 
 .link {
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-family: 'Funnel Sans', sans-serif;
+  font-weight: 700;
+  color: #8b5cf6;
+  gap: 5px;
 }
 
 .accountIcon {
   font-size: 2em;
   font-variation-settings: 'FILL' 1;
   cursor: pointer;
-  transition: 0.2s all;
   color: #8b5cf6;
+  transition: 0.2s all;
 }
 
 .accountIcon:hover {

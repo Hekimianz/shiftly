@@ -9,6 +9,7 @@ import Login from './pages/Login/Login.tsx';
 import Register from './pages/Register/Register.tsx';
 import { AuthProvider } from './context/AuthProvider.tsx';
 import Profile from './pages/Profile/Profile.tsx';
+import CreateWeek from './pages/CreateWeek/CreateWeek.tsx';
 
 const root = document.getElementById('root')!;
 
@@ -22,6 +23,7 @@ ReactDom.createRoot(root).render(
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/create" element={<CreateWeek />} />
         </Routes>
         <Footer />
       </BrowserRouter>

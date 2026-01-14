@@ -187,6 +187,134 @@
   -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
   animation: l13 1s infinite linear;
 }
+
+/* Dashboard */
+.dashboardCont {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  flex: 1;
+  background-color: #f8f7ff;
+  padding: 40px 40px;
+  font-family: 'Funnel Sans', sans-serif;
+}
+
+.dashboardCont h2 {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.bold {
+  color: #8b5cf6;
+}
+
+.subtitle {
+  color: #798899;
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.createWeekCont {
+  background: linear-gradient(to bottom right, #6e2def, #9f64fe);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+  width: 70%;
+  align-self: center;
+  border-radius: 30px;
+  margin-top: 50px;
+  padding: 50px;
+  max-width: 500px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: 8px solid #fff;
+}
+
+.lightSubtitle {
+  color: #e7d9fe;
+  font-size: 1.2em;
+  line-height: 25px;
+}
+
+.createWeekCont h2 {
+  color: #fff;
+  font-family: 'Zain', sans-serif;
+  line-height: 35px;
+}
+
+.weekCtaBtn {
+  border: none;
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 10px 15px;
+  width: 150px;
+  font-size: 1em;
+  font-weight: 700;
+  color: #8b5cf6;
+  margin-top: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+  transition: 0.2s all;
+  margin-top: 50px;
+}
+
+.weekCtaBtn:hover {
+  transform: scale(1.1);
+  color: #6e2def;
+}
+
+.iconCont {
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 40px;
+  background-color: #a06ff9;
+  box-shadow: rgba(255, 255, 255, 0.3) 0px 1px 2px 0px,
+    rgba(255, 255, 255, 0.15) 0px 2px 6px 2px;
+  position: relative;
+  margin-top: 60px;
+}
+
+.iconCont > span {
+  font-size: 4.5em;
+  user-select: none;
+}
+
+.iconContTop,
+.iconContBottom {
+  color: #6e2def;
+  background-color: #fbd94f;
+  padding: 15px;
+  border-radius: 10px;
+  transform: rotateZ(15deg);
+  position: absolute;
+  top: -20px;
+  right: -50px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.iconContTop > span,
+.iconContBottom > span {
+  font-size: 3em;
+  user-select: none;
+}
+
+.iconContBottom {
+  bottom: -30px;
+  left: -50px;
+  top: initial;
+  right: initial;
+  transform: rotateZ(-15deg);
+  background-color: #ff6b9d;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
 @keyframes l13 {
   100% {
     transform: rotate(1turn);
