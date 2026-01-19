@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Weekday from '../../components/WeekDay/Weekday';
 import styles from './CreateWeek.module.css';
 function getWeekMonday(dateStr: string): string {
@@ -30,6 +30,19 @@ export default function CreateWeek() {
     () => (weekStart ? getWeekDays(weekStart) : []),
     [weekStart]
   );
+  const [shifts, setShifts] = useState([
+    { day: 0, start: '', end: '', dayOff: false },
+    { day: 1, start: '', end: '', dayOff: false },
+    { day: 2, start: '', end: '', dayOff: false },
+    { day: 3, start: '', end: '', dayOff: false },
+    { day: 4, start: '', end: '', dayOff: false },
+    { day: 5, start: '', end: '', dayOff: false },
+    { day: 6, start: '', end: '', dayOff: false },
+  ]);
+
+  const formComplete = useMemo(() => {
+    return shifts.every((shift) => (shift.start && shift.end) || shift.dayOff);
+  }, [shifts]);
 
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -81,10 +94,20 @@ export default function CreateWeek() {
           </p>
 
           <div className={styles.weekdaysCont}>
-            {weekDays.map((day) => (
-              <Weekday key={day.date} day={day.label} date={day.date} />
+            {weekDays.map((day, i) => (
+              <Weekday
+                key={day.date}
+                day={day.label}
+                date={day.date}
+                shift={shifts[i]}
+                i={i}
+                setShifts={setShifts}
+              />
             ))}
           </div>
+          <button disabled={!formComplete} className={styles.createWeekBtn}>
+            Create Week
+          </button>
         </>
       )}
     </section>

@@ -4,7 +4,7 @@ import { useAuth } from '../../context/AuthContext';
 
 export default function Navbar() {
   const { user, loading } = useAuth();
-  console.log(user);
+
   return (
     <div className={styles.navCont}>
       <Link className={styles.link} to="/">

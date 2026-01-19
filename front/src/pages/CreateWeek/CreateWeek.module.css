@@ -48,4 +48,42 @@
   font-family: 'Zain', sans-serif;
   align-self: center;
   margin-top: 20px;
+  padding-right: 10px;
+}
+
+.weekSummary {
+  text-align: center;
+  margin-top: 30px;
+  color: #6d7381;
+  font-weight: 800;
+}
+.createWeekBtn {
+  background-color: #8b5cf6;
+  border: none;
+  padding: 15px 0;
+  margin-top: 40px;
+  border-radius: 8px;
+  font-size: 1.5em;
+  font-weight: 600;
+  font-family: 'Zain', sans-serif;
+  color: #fff;
+  width: 80%;
+  align-self: center;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+
+.createWeekBtn:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.createWeekBtn:active {
+  transform: scale(1);
+  box-shadow: none;
+}
+
+.createWeekBtn:disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }

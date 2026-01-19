@@ -2,7 +2,7 @@
   background-color: #fff;
   padding: 20px;
   border-radius: 30px;
-  width: 80%;
+  width: 100%;
   max-width: 500px;
   align-self: center;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -21,7 +21,7 @@
 .weekdayCont form {
   margin-top: 20px;
   display: flex;
-  gap: 50px;
+  justify-content: space-between;
 }
 
 .inputCont {
@@ -44,7 +44,7 @@
   padding: 20px;
   font-weight: 600;
   font-size: 1.5em;
-  width: 100%;
+  width: 70%;
   max-width: 200px;
   border: 1px solid #6d73812c;
   margin-top: 5px;
@@ -66,6 +66,7 @@
   cursor: pointer;
   font-weight: 700;
   transition: 0.2s all;
+  user-select: none;
 }
 
 .dayOffBtn:hover {
@@ -75,4 +76,14 @@
 
 .dayOffBtn:active {
   transform: scale(0.9);
+}
+
+.dayOff {
+  background-color: #dae2f3;
+  opacity: 0.5;
+}
+
+.dayOff > form > .inputCont > input {
+  user-select: none;
+  pointer-events: none;
 }
